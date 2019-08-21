@@ -33,7 +33,12 @@ group :development, :test do
   gem "faker"
   gem "pry"
   gem "pry-byebug"
-  gem "rspec-rails"
+  gem 'rspec-core', git: 'https://github.com/rspec/rspec-core'
+  gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations'
+  gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks'
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-dev'
+  gem 'rspec-support', git: 'https://github.com/rspec/rspec-support'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -51,8 +56,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem "database_cleaner"
-  gem "shoulda-matchers"
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :production do
