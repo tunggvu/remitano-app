@@ -15,6 +15,6 @@ module RemitanoApp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    config.active_record.observers = :movie_observer
+    VideoInfo.provider_api_keys = { youtube: Rails.application.credentials[:youtube_api_key]}
   end
 end
