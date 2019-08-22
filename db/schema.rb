@@ -14,8 +14,6 @@ ActiveRecord::Schema.define(version: 2019_08_21_150858) do
 
   create_table "movies", force: :cascade do |t|
     t.string "url"
-    t.string "uid"
-    t.string "title"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

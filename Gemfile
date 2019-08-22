@@ -33,7 +33,7 @@ group :development, :test do
   gem "faker"
   gem "pry"
   gem "pry-byebug"
-  gem 'rspec-core', git: 'https://github.com/rspec/rspec-core'
+  gem 'rspec-core'
   gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations'
   gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks'
   gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-dev'
