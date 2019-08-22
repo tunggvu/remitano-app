@@ -33,7 +33,7 @@ group :development, :test do
   gem "faker"
   gem "pry"
   gem "pry-byebug"
-  gem 'rspec-core', git: 'https://github.com/rspec/rspec-core'
+  gem 'rspec-core'
   gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations'
   gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks'
   gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: '4-0-dev'
@@ -71,5 +71,4 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 gem 'bcrypt'
-gem 'yt'
-gem 'rails-observers'
+gem 'video_info'
