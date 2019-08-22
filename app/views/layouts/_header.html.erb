@@ -1,9 +1,16 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", '#', id: "logo" %>
+    <%= link_to "sample app", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <%= link_to 'Share video', new_movies_path, class: 'btn btn-primary btn-lg' %>
+        <% if logged_in? %>
+          # Links for logged-in users
+          <%= link_to 'Share video', new_movies_path, class: 'btn btn-primary' %>
+          <%= link_to 'Log out', logout_path,  method: :delete, class: 'btn btn-primary' %>
+        <% else %>
+          <%= link_to 'Register', sign_up_path, class: 'btn btn-primary' %>
+          <%= link_to 'Log in', login_path, class: 'btn btn-primary' %>
+        <% end %>
       </ul>
     </nav>
   </div>
