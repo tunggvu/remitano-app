@@ -10,7 +10,8 @@
               <iframe width="350" height="220" src=<%= "https://www.youtube.com/embed/#{movie.video_id}" %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="col-sm-8">
-              <h5><%= movie.title %></h5>
+              <h3><b><%= movie.title %></b></h3>
+              <p><%= movie.description %></p>
             </div>
           <% end %>
         </div>
