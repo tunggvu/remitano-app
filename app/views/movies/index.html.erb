@@ -6,12 +6,13 @@
       <% group.each do |movie| %>
         <div class="row row-no-gutters">
           <% if movie %>
+            <% converted_movie = convert_to_video(movie.url) %>
             <div class="col-sm-4">
-              <iframe width="350" height="220" src=<%= "https://www.youtube.com/embed/#{movie.video_id}" %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="350" height="220" src=<%= "https://www.youtube.com/embed/#{converted_movie.video_id}" %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="col-sm-8">
-              <h3><b><%= movie.title %></b></h3>
-              <p><%= movie.description %></p>
+              <h3><b><%= link_to "#{converted_movie.title}", movie_path(movie)%></b></h3>
+              <p><%= converted_movie.description %></p>
             </div>
           <% end %>
         </div>

@@ -1,0 +1,19 @@
+<% converted_movie = convert_to_video(@movie.url) %>
+<div class="col-sm-4">
+  <iframe width="350" height="220" src=<%= "https://www.youtube.com/embed/#{converted_movie.video_id}" %> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="col-sm-8">
+  <h3><b><%= "#{converted_movie.title}"%></b></h3>
+  <p><%= converted_movie.description %></p>
+</div>
+
+<% @comments.each do |comment| %>
+  <%= comment.content %>
+<% end %>
+
+<%= form_tag comments_path, method: :post do %>
+  <%= text_field_tag :content %>
+  <%= hidden_field_tag "movie_id", @movie.id %>
+  <%= hidden_field_tag "user_id", current_user.id %>
+  <%= button_tag "Comment", class: "btn btn-primary" %>
+<% end %>

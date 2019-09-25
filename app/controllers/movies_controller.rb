@@ -2,7 +2,13 @@ class MoviesController < ApplicationController
   before_action :authenticate_user, except: [:index]
 
   def index
-    @movies = Movie.all.map { |movie| VideoInfo.new(movie.url) }
+    # @movies = Movie.all.map { |movie| VideoInfo.new(movie.url) }
+    @movies = Movie.all
+  end
+
+  def show
+    @movie = Movie.find params[:id]
+    @comments = @movie.comments
   end
 
   def new

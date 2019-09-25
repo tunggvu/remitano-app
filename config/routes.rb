@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'movies#index'
   resource :users
   get '/sign_up', to: 'users#new'
-  resource :movies
+  resources :movies
+  resources :comments
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
